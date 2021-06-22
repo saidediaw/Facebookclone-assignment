@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   resources :posts, only: [:new, :create, :destroy]
-  resources :users
+  resources :users, only: [:new, :create, :show]
   resources :posts do
     collection do
       post :confirm
